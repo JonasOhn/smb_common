@@ -1,4 +1,4 @@
-Forked repo of the smb_common repo for Team 5 RSS2023.
+Forked Repo for Team 5 of RSS2023.
 
 # SMB_COMMON
 Common packages for the Super Mega Bot robot.  
