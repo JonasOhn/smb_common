@@ -7,7 +7,7 @@
     <!--State Estimation-->
     <include file="$(find smb_gazebo)/launch/sim.launch">
         <arg name="keyboard_teleop" value="false"/>
-        <arg name="launch_gazebo_gui" value="true"/>
+        <arg name="launch_gazebo_gui" value="false"/>
         <arg name="world" value="planner_tutorial"/>
         <arg name="tracking_camera" value="$(arg tracking_camera)"/>
     </include>
