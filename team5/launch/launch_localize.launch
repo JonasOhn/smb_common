@@ -4,8 +4,8 @@
     <arg name="tracking_camera" default="false"/>
     <arg name="pcd_file_path" default="$(arg data_path)/map.pcd"/>
 
-    <!--State Estimation-->
-    <include file="$(find smb_gazebo)/launch/sim.launch">
+    <!--Sim-->
+    <include file="$(find smb_gazebo)/launch/sim.launch" if="$(arg sim)">
         <arg name="keyboard_teleop" value="false"/>
         <arg name="launch_gazebo_gui" value="false"/>
         <arg name="world" value="planner_tutorial"/>
