@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 import rospy
-import geometry_msgs
+from geometry_msgs.msg import PoseWithCovarianceStamped
 import time
 
 time.sleep(1.)
 
-pub = rospy.Publisher('/initialpose', geometry_msgs.msg.PoseWithCovarianceStamped, queue_size=10)
+pub = rospy.Publisher('/initialpose', PoseWithCovarianceStamped, queue_size=10)
 rospy.init_node('initial_pose_publisher', anonymous=True)
 
 pose = geometry_msgs.msg.PoseWithCovarianceStamped()
