@@ -17,4 +17,7 @@
         <arg name="global_map" value="$(arg cost_map_file_path)"/>
         <arg name="sim" value="$(arg sim)"/>
     </include>
+
+    <!--Publish challenge origin-->
+    <node pkg="tf" type="static_transform_publisher" name="origin_broadcaster" args="0 0 10 0 0 0 0 map_o3d challenge_origin 100" />
 </launch>
