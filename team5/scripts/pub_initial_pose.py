@@ -9,7 +9,7 @@ time.sleep(1.)
 pub = rospy.Publisher('/initialpose', PoseWithCovarianceStamped, queue_size=10)
 rospy.init_node('initial_pose_publisher', anonymous=True)
 
-pose = geometry_msgs.msg.PoseWithCovarianceStamped()
+pose = PoseWithCovarianceStamped()
 pose.header.frame_id = "map_o3d"
 pose.pose.pose.position.x=8.639346270433826
 pose.pose.pose.position.y=-32.01220504629785
