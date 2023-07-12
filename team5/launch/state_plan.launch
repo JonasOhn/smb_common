@@ -19,5 +19,5 @@
     </include>
 
     <!--Publish challenge origin-->
-    <node pkg="tf" type="static_transform_publisher" name="origin_broadcaster" args="0 0 10 0 0 0 1 map_o3d challenge_origin 100" />
+    <node pkg="tf" type="static_transform_publisher" name="origin_broadcaster" args="7.9 -17.4 0 0 0 .939692 .03420201 map_o3d challenge_origin 100" />
 </launch>
