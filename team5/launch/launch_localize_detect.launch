@@ -19,8 +19,14 @@
         </include>
     </group>
 
-    <!--Localize in map-->
+    <!--Launch localization in prior map-->
     <include file="$(find smb_slam)/launch/localization.launch">
         <arg name="pcd_file_path" value="$(arg pcd_file_path)"/>
     </include>
+
+    <!--Publish initial pose close to tent-->
+    <node pkg="team5" name="pub_initial_pose.py" type="pub_initial_pose.py" output="screen"/>
+
+    <!--Object detector-->
+    <include file="$(find object_detection)/launch/object_detection.launch"/>
 </launch>
