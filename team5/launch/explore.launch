@@ -1,7 +1,7 @@
 <launch>
     <!--Launch robot-->
     <include file="$(find smb)/launch/smb.launch">
-        <arg name="launch_tracking_cam" value="$(arg tracking_camera)"/>
+        <arg name="launch_tracking_cam" value="true"/>
     </include>
 
     <!--Object detector-->
