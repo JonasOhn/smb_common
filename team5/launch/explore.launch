@@ -23,8 +23,6 @@
     <!--Exploration-->
     <include file="$(find smb_exploration)/launch/frontier/smb_rss_frontier.launch">
         <arg name="map_frame" value="gmap_map"/>
-        <arg name="exploration" value="1"/>
-        <arg name="sim" value="$(arg sim)"/>
     </include>
 
     <!--Planner-->
