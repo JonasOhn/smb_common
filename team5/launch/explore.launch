@@ -19,7 +19,6 @@
 
     <!--Object detector-->
     <include file="$(find object_detection)/launch/object_detection.launch"/>
-    <arg name="cost_map_file_path" default="$(arg data_path)/map.yaml"/>
 
     <!--Exploration-->
     <include file="$(find smb_exploration)/launch/smb_rss_frontier.launch">
