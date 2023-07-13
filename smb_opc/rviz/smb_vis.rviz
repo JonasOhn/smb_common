@@ -5,6 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /Status1
         - /Robot1/Sensors1/Lidar Raw1
         - /SLAM1/Map1
         - /Object Detection1
@@ -74,8 +75,8 @@ Visualization Manager:
             - Alpha: 1
               Autocompute Intensity Bounds: true
               Autocompute Value Bounds:
-                Max Value: 19.50853157043457
-                Min Value: -1.969512939453125
+                Max Value: 14.874570846557617
+                Min Value: -3.6133627891540527
                 Value: true
               Axis: Z
               Channel Name: intensity
@@ -122,15 +123,13 @@ Visualization Manager:
                   Value: true
                 base_link:
                   Value: true
+                gmap_map:
+                  Value: true
                 imu:
                   Value: true
                 imu_link:
                   Value: true
                 lidar_mount_link:
-                  Value: true
-                map_o3d:
-                  Value: true
-                odom_o3d:
                   Value: true
                 rgb_camera_link:
                   Value: true
@@ -139,6 +138,12 @@ Visualization Manager:
                 rslidar:
                   Value: true
                 top:
+                  Value: true
+                tracking_camera_link:
+                  Value: true
+                tracking_camera_odom:
+                  Value: true
+                tracking_camera_pose_frame:
                   Value: true
               Marker Alpha: 1
               Marker Scale: 1
@@ -163,14 +168,18 @@ Visualization Manager:
                       {}
                   lidar_mount_link:
                     rslidar:
-                      odom_o3d:
-                        map_o3d:
-                          {}
+                      {}
                   rgb_camera_link:
                     rgb_camera_optical_link:
                       {}
                   top:
                     {}
+                  tracking_camera_link:
+                    tracking_camera_pose_frame:
+                      {}
+                  tracking_camera_odom:
+                    gmap_map:
+                      {}
               Update Interval: 0
               Value: true
             - Alpha: 1
@@ -245,6 +254,15 @@ Visualization Manager:
                   Show Axes: false
                   Show Trail: false
                   Value: true
+                tracking_camera_link:
+                  Alpha: 1
+                  Show Axes: false
+                  Show Trail: false
+                  Value: true
+                tracking_camera_pose_frame:
+                  Alpha: 1
+                  Show Axes: false
+                  Show Trail: false
               Name: RobotModel
               Robot Description: smb_description
               TF Prefix: ""
@@ -586,7 +604,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map_o3d
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
