@@ -1,0 +1,22 @@
+<launch>
+    <arg name="sim" default="true"/>
+    <arg name="data_path" default="$(find smb_navigation)/data/simulation"/>
+    <arg name="cost_map_file_path" default="$(arg data_path)/map.yaml"/>
+
+    <!--State Estimation-->
+    <include file="$(find smb_msf_graph)/launch/smb_msf_graph_sim.launch">
+        <arg name="launch_o3d_slam" value="false"/>
+    </include>
+
+    <!--Planner-->
+    <include file="$(find smb_navigation)/launch/navigate2d_ompl.launch">
+        <arg name="global_frame" value="world_graph_msf"/>
+        <arg name="use_global_map" value="true"/>
+        <arg name="odom_topic" value="/graph_msf/est_odometry_odom_imu"/>
+        <arg name="global_map" value="$(arg cost_map_file_path)"/>
+        <arg name="sim" value="$(arg sim)"/>
+    </include>
+
+    <!--Publish challenge origin-->
+    <!--<node pkg="tf" type="static_transform_publisher" name="origin_broadcaster" args="0 0 0 0 0 0 0 map_o3d challenge_origin 100" />-->
+</launch>
