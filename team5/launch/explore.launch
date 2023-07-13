@@ -1,21 +1,8 @@
 <launch>
-    <arg name="sim" default="false"/>
-    <arg name="tracking_camera" default="true"/>
-
-    <!--Sim-->
-    <include file="$(find smb_gazebo)/launch/sim.launch" if="$(arg sim)">
-        <arg name="keyboard_teleop" value="false"/>
-        <arg name="launch_gazebo_gui" value="false"/>
-        <arg name="world" value=""/>
-        <arg name="tracking_camera" value="$(arg tracking_camera)"/>
-    </include>
-
     <!--Launch robot-->
-    <group unless="$(arg sim)">
-        <include file="$(find smb)/launch/smb.launch">
-            <arg name="launch_tracking_cam" value="$(arg tracking_camera)"/>
-        </include>
-    </group>
+    <include file="$(find smb)/launch/smb.launch">
+        <arg name="launch_tracking_cam" value="$(arg tracking_camera)"/>
+    </include>
 
     <!--Object detector-->
     <include file="$(find object_detection)/launch/object_detection.launch"/>
@@ -23,12 +10,12 @@
     <!--Exploration-->
     <include file="$(find smb_exploration)/launch/frontier/smb_rss_frontier.launch">
         <arg name="map_frame" value="gmap_map"/>
+        <arg name="publish_odom_to_map" value="true"/>
     </include>
 
     <!--Planner-->
     <include file="$(find smb_navigation)/launch/navigate2d_ompl.launch">
         <arg name="global_frame" value="gmap_map"/>
-        <arg name="exploration" value="1"/>
-        <arg name="sim" value="$(arg sim)"/>
+        <arg name="exploration" value="true"/>
     </include>
 </launch>
